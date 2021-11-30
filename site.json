@@ -1,8 +1,6 @@
 {
-  "ProjectName": "VAT",
-  "Introduce": "测试项目",
-  "GitStar": "3",
-  "UpdatedTime": "2021-11-29",
-  "Functionary": "GALAXY",
-  "GitAdress": "null"
+  "projectName": "VAT",
+  "introduce": "测试项目",
+  "updatedTime": "2021-11-29",
+  "owner": "GALAXY"
 }
