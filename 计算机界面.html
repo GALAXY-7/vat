@@ -5,23 +5,50 @@
             function select(){
                 var myselect=document.getElementById("sel");
                 var index=myselect.selectedIndex; 
+
                 var kind=myselect.options[index].text;
-                alert(kind);
+                //alert(kind);
+
+                if(kind=='含税额'){
+                    cal1()
+                }
+
+                if(kind=='不含税额'){
+                    cal2()
+                }
 
                 if(kind=='税率'){
-                    alert("ca1")
-                    cal1()
+                    cal3()
+                }
+
+                if(kind=='增值税额'){
+                    cal4()
                 }
             }
             function cal1(){
-                alert("now,税率")
-                var tax = parseInt(document.getElementsByName('tax')[0].value)
-                var tax_money = parseInt(document.getElementsByName('tax')[0].value)
-                var non_tax_money = parseInt(document.getElementsByName('tax')[0].value)
-                var tax_m = parseInt(document.getElementsByName('tax')[0].value)
+                //alert("now,含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
 
-                document.getElementById("out").innerHTML = tax;
-                alert(tax)
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
+            }
+
+            function cal2(){
+                //alert("now,不含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
+
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
             }
         </script>
 
@@ -82,6 +109,15 @@
                 color:rgb(9, 89, 185);
             }
 
+            .tip{
+                position:fixed;
+                left:90px;
+                color:red;
+                font-size: larger;
+
+            }
+
+           
             .outout{
                 width:300px;
                 height:50px;
@@ -89,6 +125,7 @@
                 left:550px;
             }
 
+            
            
             
         </style>
@@ -113,18 +150,27 @@
 
         </div>
 
+        <div class='tip'>
+            <p>输入提示：</p>
+            <p type='text' class='tiptip' id='tip'></p>
+
+        </div>
+
         <div class='to'>
             <p class='t1'>含税额</p>
-            <input type='text' class='text1'>
+            <input type='text' class='text1' name='tax_money'>
         </div>
 
         <div class="void1">
 
         </div>
 
+        
+
+
         <div class='to'>
             <p class='t1'>不含税额</p>
-            <input type='text' class='text1'>
+            <input type='text' class='text1' name='non_tax_money'>
         </div>
 
         <div class="void1">
@@ -133,7 +179,7 @@
 
         <div class='to'>
             <p class='t1'>增值税额</p>
-            <input type='text' class='text1'>
+            <input type='text' class='text1' name='tax_m'>
         </div>
 
         
@@ -154,8 +200,8 @@
         <div class="void1">
 
         </div>
-        
 
+        
         <div class='to'>
             <p class='t1'>计算结果</p>
             <p type='text' class='outout' id='out'></p>
