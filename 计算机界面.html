@@ -1,8 +1,13 @@
 ​<html>
     <head>
         <script type="text/javascript">
+            window.onload=function(){
+                document.getElementById('tip').innerHTML='选择计算内容后点击计算按钮可获取提示'
+            }
 
             function select(){
+                
+
                 var myselect=document.getElementById("sel");
                 var index=myselect.selectedIndex; 
 
@@ -34,6 +39,14 @@
 
 
                 document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                
+                if(non_tax_money>0)
+                    result=non_tax_money+non_tax_money*tax;
+                else if (tax_m>0)
+                    result=tax_m/tax/(1+tax)
+                else
+                    alert("输入错误")
+                    
                 document.getElementById("out").innerHTML = result;
                 //alert(tax)
             }
@@ -47,6 +60,49 @@
 
 
                 document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                result=
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
+            }
+
+            function cal3(){
+                //alert("now,含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
+
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                
+                if(non_tax_money>0)
+                    result=non_tax_money+non_tax_money*tax;
+                else if (tax_m>0)
+                    result=tax_m/tax/(1+tax)
+                else
+                    alert("输入错误")
+                    
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
+            }
+
+            function cal4(){
+                //alert("now,含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
+
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                
+                if(non_tax_money>0)
+                    result=non_tax_money+non_tax_money*tax;
+                else if (tax_m>0)
+                    result=tax_m/tax/(1+tax)
+                else
+                    alert("输入错误")
+                    
                 document.getElementById("out").innerHTML = result;
                 //alert(tax)
             }
