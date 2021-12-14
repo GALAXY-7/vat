@@ -1,90 +1,222 @@
-<html>
+​<html>
     <head>
-        <title>首页</title>
-        <div class="void1">
+        <script type="text/javascript">
+            window.onload=function(){
+                document.getElementById('tip').innerHTML='选择计算内容后点击计算按钮可获取提示'
+            }
 
-        </div>
-        <div class="ti">
-            
-            <div>
-                <p class=title>增值税及相关知识网</p>
-            </div>
-
-        
-            <div>
-                <img src='增值税.png' alt='增值税' class='pic'>
-            </div>
-
-            <div>
-                <p class='intro'>增值税介绍</p>
-            </div>
-            <div class='p1'>
-                <p>增值税是以商品（含应税劳务）在流转过程中产生的增值额作为计税依据而征收的一种流转税。</p>
-                <p>从计税原理上说，增值税是对商品生产、流通、劳务服务中多个环节的新增价值或商品的附加值征收的一种流转税。实行价外税，也就是由消费者负担，有增值才征税没增值不征税。</p>
-                <p>增值税是对销售货物或者提供加工、修理修配劳务以及进口货物的单位和个人就其实现的增值额征收的一个税种。增值税已经成为中国最主要的税种之一，增值税的收入占中国全部税收的60%以上，是最大的税种。增值税由国家税务局负责征收，税收收入中50%为中央财政收入，50%为地方收入。进口环节的增值税由海关负责征收，税收收入全部为中央财政收入。</p>
-            </div>
-        </div>
-        
-
-        
-       
-        
-        <div class="top">
+            function select(){
                 
-                <ul>
-                <li><a href="计算机界面.html">计算器</a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="税的介绍.html">税的介绍</a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="其他.html">其他</a></li>
-                </ul>
-                    
-        </div>
-        
 
-        
+                var myselect=document.getElementById("sel");
+                var index=myselect.selectedIndex; 
+
+                var kind=myselect.options[index].text;
+                //alert(kind);
+
+                if(kind=='含税额'){
+                    cal1()
+                }
+
+                if(kind=='不含税额'){
+                    cal2()
+                }
+
+                if(kind=='税率'){
+                    cal3()
+                }
+
+                if(kind=='增值税额'){
+                    cal4()
+                }
+            }
+            function cal1(){
+                //alert("now,含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
+
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                
+                if(non_tax_money>0)
+                    result=non_tax_money+non_tax_money*tax;
+                else if (tax_m>0)
+                    result=tax_m/tax/(1+tax)
+                else
+                    alert("输入错误")
+                    
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
+            }
+
+            function cal2(){
+                //alert("now,不含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
+
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                result=
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
+            }
+
+            function cal3(){
+                //alert("now,含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
+
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                
+                if(non_tax_money>0)
+                    result=non_tax_money+non_tax_money*tax;
+                else if (tax_m>0)
+                    result=tax_m/tax/(1+tax)
+                else
+                    alert("输入错误")
+                    
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
+            }
+
+            function cal4(){
+                //alert("now,含税额")
+                var tax = parseInt(document.getElementsByName('tax')[0].value)      //税率
+                var tax_money = parseInt(document.getElementsByName('tax_money')[0].value)
+                var non_tax_money = parseInt(document.getElementsByName('non_tax_money')[0].value)
+                var tax_m = parseInt(document.getElementsByName('tax_m')[0].value)        //增值税额
+
+
+                document.getElementById('tip').innerHTML='输入不含税额+税率,或增值税额+税率'
+                
+                if(non_tax_money>0)
+                    result=non_tax_money+non_tax_money*tax;
+                else if (tax_m>0)
+                    result=tax_m/tax/(1+tax)
+                else
+                    alert("输入错误")
+                    
+                document.getElementById("out").innerHTML = result;
+                //alert(tax)
+            }
+        </script>
 
         <style>
 
-            .void1{
-
-                width:100px;
-                height:30px;
-            }
             body{
-                background-color: white;
+                background-color: rgb(240, 243, 248);
             }
-
             .ti{
                 text-align: center;
             }
             
             .title{
+                font-size:xx-large;
+            }
+
+            .void1{
+                width:300px;
+                height:70px;
+            }
+
+            
+            .to{
+                text-align: center;
+            }
+
+            .t1{
+                position: absolute;
+                
+                left:450px;
+            }
+            .text1{
+                width:300px;
+                height:50px;
+            }
+
+            .se1{
+                width:200px;
+                height:50px;
+            }
+
+
+            .but{
+                position:absolute;
+                top:830px;
+                left:650px;
+                
+            }
+
+            .bu{
+                width:100px;
+                height:40px;
+                font-size: large;
+                color:rgb(9, 89, 185);
+            }
+
+            .tip{
+                position:fixed;
+                left:90px;
+                color:red;
+                font-size: larger;
+
+            }
+
+           
+            .outout{
+                width:300px;
+                height:50px;
+                position:absolute;
+                left:550px;
+            }
+
+            
+            .introduce{
+                text-align: center;
+                width:400px;
+                height:600px;
+                top:400px;
+                position:absolute;
+                right:0;
+                font-size:medium;
+                float:right;
+            }
+            
+            .void1{
+
+                width:200px;
+                height:60px;
+            }
+            body{
+                background-color: white;
+            }
+
+            .title{
                 font-size:60px;
+            }
+
+            .picc{
+                position: absolute;
+              
+                float:right;
+                right:280px;
             }
 
 
             .pic{
-               
-                float:right;
+                position:absolute;
+                width:200px;
+
             }
 
-            .intro{
-                position:absolute;
-                left:480px;
-                top:200px;
-                font-size:x-large;                
-            }
-
-            .p1{
-                width:500px;
-                position:absolute;
-                left:300px;
-                font-size: larger;
-                
-            }
+           
             .top{
                 height: auto; /*高度改为自动高度*/
                 width:100%;
@@ -145,8 +277,131 @@
             body{
                 background: white;
             }
-
-       
+            
+           
+            
         </style>
+
+        
     </head>
+
+    <body>
+        <title>增值税计算器</title>
+        <div class="top">
+                
+            <ul>
+            <li><a href="index.html">计算器</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="税的介绍.html">税的介绍</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="关于.html">关于</a></li>
+            </ul>
+                
+    </div>
+
+    <div class='picc'>
+        <img src='增值税.png' alt='增值税' class='pic'>
+    </div>
+        <div class="introduce">  
+        
+            
+          
+
+            <div>
+                <p class='intro'>增值税介绍</p>
+            </div>
+            <div class='p1'>
+                <p>增值税是以商品（含应税劳务）在流转过程中产生的增值额作为计税依据而征收的一种流转税。</p>
+                <p>从计税原理上说，增值税是对商品生产、流通、劳务服务中多个环节的新增价值或商品的附加值征收的一种流转税。实行价外税，也就是由消费者负担，有增值才征税没增值不征税。</p>
+                <p>增值税是对销售货物或者提供加工、修理修配劳务以及进口货物的单位和个人就其实现的增值额征收的一个税种。增值税已经成为中国最主要的税种之一，增值税的收入占中国全部税收的60%以上，是最大的税种。增值税由国家税务局负责征收，税收收入中50%为中央财政收入，50%为地方收入。进口环节的增值税由海关负责征收，税收收入全部为中央财政收入。</p>
+            </div>
+        </div>
+        <div class="ti">
+            
+            <div>
+                <p class=title>增值税计算器</p>
+            </div>
+        
+        <div class='to'>
+            <p class='t1'>税率</p>
+            <input type='text' class='text1' name='tax'>
+        </div>
+
+        <div class="void1">
+
+        </div>
+
+        <div class='tip'>
+            <p>输入提示：</p>
+            <p type='text' class='tiptip' id='tip'></p>
+
+        </div>
+
+        <div class='to'>
+            <p class='t1'>含税额</p>
+            <input type='text' class='text1' name='tax_money'>
+        </div>
+
+        <div class="void1">
+
+        </div>
+
+        
+
+
+        <div class='to'>
+            <p class='t1'>不含税额</p>
+            <input type='text' class='text1' name='non_tax_money'>
+        </div>
+
+        <div class="void1">
+
+        </div>
+
+        <div class='to'>
+            <p class='t1'>增值税额</p>
+            <input type='text' class='text1' name='tax_m'>
+        </div>
+
+        
+
+        <div class="void1">
+
+        </div>
+        <div class='to'>
+            <p class='t1'>计算内容</p>
+            <select class='se1' id='sel'>
+                <option value ="volvo">含税额</option>
+                <option value ="saab">不含税额</option>
+                <option value="opel">税率</option>
+                <option value="audi">增值税额</option>
+            </select>
+        </div>
+     
+        <div class="void1">
+
+        </div>
+
+        
+        <div class='to'>
+            <p class='t1'>计算结果</p>
+            <p type='text' class='outout' id='out'></p>
+        </div>
+           
+
+        <div class="void1">
+
+        </div>
+
+        <div class='but'>
+            <button class='bu' onclick=select();>计算</button>
+        </div>
+
+
+    </body>
 </html>
+
+
+

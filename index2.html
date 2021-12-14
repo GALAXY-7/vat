@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title>首页</title>
+        <div class="void1">
+
+        </div>
+        <div class="ti">
+            
+            <div>
+                <p class=title>增值税及相关知识网</p>
+            </div>
+
+        
+            <div>
+                <img src='增值税.png' alt='增值税' class='pic'>
+            </div>
+
+            <div>
+                <p class='intro'>增值税介绍</p>
+            </div>
+            <div class='p1'>
+                <p>增值税是以商品（含应税劳务）在流转过程中产生的增值额作为计税依据而征收的一种流转税。</p>
+                <p>从计税原理上说，增值税是对商品生产、流通、劳务服务中多个环节的新增价值或商品的附加值征收的一种流转税。实行价外税，也就是由消费者负担，有增值才征税没增值不征税。</p>
+                <p>增值税是对销售货物或者提供加工、修理修配劳务以及进口货物的单位和个人就其实现的增值额征收的一个税种。增值税已经成为中国最主要的税种之一，增值税的收入占中国全部税收的60%以上，是最大的税种。增值税由国家税务局负责征收，税收收入中50%为中央财政收入，50%为地方收入。进口环节的增值税由海关负责征收，税收收入全部为中央财政收入。</p>
+            </div>
+        </div>
+        
+
+        
+       
+        
+        <div class="top">
+                
+                <ul>
+                <li><a href="计算机界面.html">计算器</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="税的介绍.html">税的介绍</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="其他.html">其他</a></li>
+                </ul>
+                    
+        </div>
+        
+
+        
+
+        <style>
+
+            .void1{
+
+                width:100px;
+                height:30px;
+            }
+            body{
+                background-color: white;
+            }
+
+            .ti{
+                text-align: center;
+            }
+            
+            .title{
+                font-size:60px;
+            }
+
+
+            .pic{
+               
+                float:right;
+            }
+
+            .intro{
+                position:absolute;
+                left:480px;
+                top:200px;
+                font-size:x-large;                
+            }
+
+            .p1{
+                width:500px;
+                position:absolute;
+                left:300px;
+                font-size: larger;
+                
+            }
+            .top{
+                height: auto; /*高度改为自动高度*/
+                width:100%;
+                margin-left: 0;
+                background:white;
+                position: fixed; /*固定在顶部*/
+                top: 0;/*离顶部的距离为0*/
+                margin-bottom: 5px;
+            }
+            .top ul{
+                /* 清除ul标签的默认样式 */
+                width: auto;/*宽度也改为自动*/
+                list-style-type: none;
+                white-space:nowrap;
+                overflow: hidden;
+                margin-left: 5%;
+                /* margin-top: 0;          */
+                padding: 0;
+
+            }
+            .top li {
+                float:left; /* 使li内容横向浮动，即横向排列  */
+                margin-right:2%;  /* 两个li之间的距离*/
+                position: relative;
+                overflow: hidden;
+            }
+
+            .top li a{
+            /* 设置链接内容显示的格式*/
+                display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+                color:rgb(28, 31, 37);
+                text-align: center;
+                padding: 3px;
+                overflow: hidden;
+                text-decoration: none; /* 去除下划线 */
+                
+            }
+            .top li a:hover{
+                /* 鼠标选中时背景变为黑色 */
+                background-color: rgb(217, 231, 252);
+            }
+            .top ul li ul{
+                /* 设置二级菜单 */
+                margin-left: -0.2px;
+                background:white;
+                position: relative;
+                display: none; 
+
+            }
+            .top ul li ul li{
+                
+                float:none;
+                text-align: center;
+            }
+            .top ul li:hover ul{
+                display: block;
+            }
+            body{
+                background: white;
+            }
+
+       
+        </style>
+    </head>
+</html>
