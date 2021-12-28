@@ -114,6 +114,25 @@
                 document.getElementById("out").innerHTML = result;
                 //alert(tax)
             }
+
+
+            function NavBarItem(text,url){
+                const aHref=document.createElement("a")
+                aHref.text=text
+                aHref.href=url
+
+                const liContainer=document.createElement("li")
+                liContainer.appendChild(aHref)
+                return liContainer
+            }
+            function NavigationBar() {
+                const ulContainer=document.createElement("ul")
+                ulContainer.appendChild(NavBarItem("介绍","税的介绍.html"))
+                ulContainer.appendChild(NavBarItem("关于","关于.html"))
+                return ulContainer
+            }
+    
+            document.getElementByClass("top").appendChild(NavigationBar())
         </script>
 
         <style>
@@ -311,17 +330,13 @@
             <li><a href="关于.html">关于</a></li>
             </ul>
                 
-    </div>
+        </div>
 
     <div class='picc'>
         <img src='增值税.png' alt='增值税' class='pic'>
     </div>
         <div class="introduce">  
 
-        
-        <embed src="z.avi" width="200" height="240" class="avi">
-        </embed>
-        
             
           
 
